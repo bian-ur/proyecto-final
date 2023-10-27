@@ -1,0 +1,189 @@
+
+//font
+$font-family-sans-serif: 'Playpen Sans', cursive;
+
+
+//variables colores
+$primary: #e0be8f;
+$success: #e3dcc2;
+$dark: #775d38;
+$secondary: #8e7451;
+$white: #49361de3;
+
+
+
+
+//varaibles medidas
+$container-max-whidths: (
+    sm: 540px,
+    md: 720px,
+    lg: 960px,
+    xl: 960px,
+    xxl: 960px
+);
+
+
+
+
+
+//mixins
+@mixin mi1( $argumento1, $argumento2, $argumento3, $argumento4){
+    color: $argumento1;
+    font-size: $argumento2;
+    text-transform: $argumento3;
+    margin-bottom: $argumento4;
+}
+
+
+@mixin mi2($argumento5, $argumento6, $argumento7, $argumento8, $argumento9, $argumento10, $argumento11, $argumento12){
+    width: $argumento5;
+    height: $argumento6;
+    border-radius:$argumento7;
+    border-style: $argumento8;
+    background-color: $argumento9;
+    font-size: $argumento10;
+    border-radius: $argumento11;
+    overflow: $argumento12;
+}
+
+@mixin mi3( $argumento13, $argumento14, $argumento15, $argumento16, $argumento17, $argumento18){
+    width: $argumento13;
+    height: $argumento14;
+    display: $argumento15;
+    align-items: $argumento16;
+    justify-content: $argumento17;
+    padding: $argumento18;
+}
+
+
+//codigo css
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing:border-box ;
+    
+}
+#menu {
+    font-size: smaller;
+    font-weight: bold;
+}
+
+
+.main-container{
+    width: 325px;
+    margin: 10px auto 100px;
+    padding-top: 5px;
+    
+
+}
+
+.main-container article{
+    width: 100%;
+    height: 440px;
+    padding: 48px;
+}
+
+#mep{
+    background-color: $primary ;
+
+}
+
+#envi{
+    background-color:$secondary;
+
+}
+
+#compraseg{
+    background-color:$dark;
+
+}
+
+.main-container svg{
+    margin:36px ;
+    width: 50px;
+    height: 50px;
+}
+
+
+.main-container h1{
+    @include mi1($white,large,uppercase ,25px );
+}
+
+.main-container p{
+    color: $success;
+    line-height: 20px;
+    margin-bottom: 25px;
+}
+
+.main-container button{
+    @include mi2(148px,46px ,45px ,none ,$success ,15px ,8px ,hidden )
+}
+
+#mep-btn{
+    color:$primary ;
+}
+
+#envi-btn{
+    color:$secondary ;
+}
+
+#compraseg-btn{
+    color:$dark ;
+}
+
+button:hover {
+    cursor: pointer;
+    border: 2px solid $white;
+}
+
+#mep-btn:hover{
+    background-color:$primary ;
+    color: #e3dcc2;
+}
+
+#envi-btn:hover{
+    background-color:$secondary;
+    color: $dark;
+}
+
+#compraseg-btn:hover{
+    background-color:$dark;
+    color: $white;
+}
+
+@media (min-width: 944px) {
+    .main-container{
+        width: 840px;
+        display:flex ;
+        margin-top: 170px;
+
+
+    }
+}
+
+.logo {
+    width: 50%;
+}
+
+
+
+.icono {
+    @include mi3(60px,60px ,inline-flex ,center,center,3 )
+}
+
+
+.productos {
+    width: 150px; 
+}
+
+#iconfooter{
+    width: 30px; 
+    height: 30px;
+}
+
+.imglocal {
+    width: 800px;
+    height: 800px;
+}
+
+@import "../node_modules/bootstrap/scss/bootstrap"; 
